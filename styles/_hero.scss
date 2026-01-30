@@ -28,83 +28,83 @@
     margin: 0 0 22px 0;
     text-align: center;
   }
+/***** Hero search override (homepage only) *****/
 .hero {
 
-  /* the form container */
-  .search.search-full {
+  /* Kill flex ONLY in hero */
+  .hero-inner .search.search-full {
+    display: block;            /* overrides display:flex */
     position: relative;
+    border: none;
     max-width: 620px;
     margin: 0 auto;
   }
 
-  /* the input (black bar) */
-  .search.search-full input[type="search"] {
+  /* Black pill input */
+  .hero-inner .search.search-full input[type="search"] {
     width: 100%;
+    height: 52px;
     background: #000;
     color: #fff;
-    border: 0;
+    border: none;
     border-radius: 999px;
     font-size: 16px;
-    height: 52px;
-    padding: 0 120px 0 48px; /* room: right for buttons, left for icon */
     outline: none;
+
+    /* space for buttons */
+    padding: 0 150px 0 48px;
   }
 
-  .search.search-full input[type="search"]::placeholder {
+  .hero-inner .search.search-full input[type="search"]::placeholder {
     color: rgba(255, 255, 255, 0.6);
   }
 
-  /* Search submit INSIDE the bar (right side) */
-  .search.search-full input[type="submit"] {
+  /* Search button INSIDE the bar */
+  .hero-inner .search.search-full input[type="submit"] {
     position: absolute;
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
     height: 40px;
     padding: 0 18px;
-    border: 0;
-    border-radius: 999px;
-    background: #000;
-    color: #fff;
-    cursor: pointer;
-  }
 
-  .search.search-full input[type="submit"]:hover {
     background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    white-space: nowrap;
   }
 
-  /* Clear (X) button INSIDE the bar (just left of submit) */
-  .search.search-full .clear-button {
+  .hero-inner .search.search-full input[type="submit"]:hover {
+    background: #222;
+  }
+
+  /* Clear (X) button inside bar */
+  .hero-inner .search.search-full .clear-button {
     position: absolute;
-    right: 95px; /* sits left of the submit button */
+    right: 95px;
     top: 50%;
     transform: translateY(-50%);
     height: 40px;
     width: 40px;
-    border: 0;
-    border-radius: 999px;
+
     background: transparent;
-    color: rgba(255, 255, 255, 0.85);
+    border: none;
+    border-radius: 999px;
+    color: rgba(255,255,255,0.85);
     cursor: pointer;
   }
 
-  .search.search-full .clear-button:hover {
-    background: rgba(255, 255, 255, 0.08);
+  .hero-inner .search.search-full .clear-button:hover {
+    background: rgba(255,255,255,0.08);
   }
 
-  /* Keep your magnifier icon inside the bar */
-  .hero-inner {
-    position: relative;
-  }
-
-  .search-icon {
-    position: absolute;
+  /* Magnifier icon inside bar */
+  .hero-inner .search-icon {
     left: 18px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: rgba(255, 255, 255, 0.85);
-    pointer-events: none;
+    color: rgba(255,255,255,0.85);
   }
 }
-
+ 
 }
